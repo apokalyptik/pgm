@@ -29,8 +29,11 @@ Under Development: TODO
 * Spawnpoint Scanning
 * Sitching from beehive to spawnpoint scanning once all locations have been checked properly
 * Webhooks
+* Account rotation
 
 Error handling
 ==============
 * Detect disconnects ?
+* Reconnect
 * Detect soft bans
+* Banned account removal
