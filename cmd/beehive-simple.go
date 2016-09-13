@@ -21,7 +21,7 @@ import (
 	"googlemaps.github.io/maps"
 
 	"github.com/apokalyptik/pgm/beehive"
-	"github.com/apokalyptik/pgm/debug"
+	"github.com/apokalyptik/pgm/feed"
 	"github.com/apokalyptik/pgm/ll"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -47,7 +47,7 @@ var beehiveSimpleCmd = &cobra.Command{
 		for _, account := range viper.GetStringSlice("accounts") {
 			accounts = append(accounts, strings.Split(account, ":"))
 		}
-		beehive.Feed = new(debug.Feed)
+		beehive.Feed = feed.New()
 		beehive.Start(start, viper.GetInt("steps"), accounts)
 		<-make(chan struct{})
 	},
